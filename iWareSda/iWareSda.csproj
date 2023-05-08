@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Plc\新文件夹\**" />
+    <Content Remove="Plc\新文件夹\**" />
+    <EmbeddedResource Remove="Plc\新文件夹\**" />
+    <None Remove="Plc\新文件夹\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="D:\Nuget\.nuget\packages\nlog.config\4.7.15\contentFiles\any\any\NLog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Coravel" Version="4.2.0" />
+    <PackageReference Include="HslCommunication" Version="11.3.0" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.2.0" />
+    <PackageReference Include="RestSharp" Version="108.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Cfg\NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\iWareDao\iWareDao.csproj" />
+    <ProjectReference Include="..\S7NetSimulation\S7NetSimulation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Cfg\NLog.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="note\" />
+  </ItemGroup>
+
+</Project>
