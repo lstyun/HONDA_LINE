@@ -32,9 +32,8 @@ public partial class PlcS7Net
         var host = config["plc:host"];
 
         var rack = config["plc:rack"];
-
         var slot = config["plc:slot"];
-
+        1
         _logger.LogInformation("PlcS7启动了... host={host}, rack={rack}, slot={slot}", host, rack, slot);
 
         _plcS7 = new PlcS7(EnumHelper.GetEnum<CpuType>(config["plc:cpuType"]), host ?? "127.0.0.1",
