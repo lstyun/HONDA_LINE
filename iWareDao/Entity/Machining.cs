@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,14 @@ namespace iWareDao.Entity
     /// <summary>
     /// 加工参数
     /// </summary>
+    [Table("machining")]
+    [Comment("加工参数表")]
     public class Machining:BaseEntity
     {
         /// <summary>
         /// 毛坯站视觉移栽伺服当前速度
         /// </summary>
+        [Comment("1")]
         public float M_DBD60 { get; set; }
 
         /// <summary>
